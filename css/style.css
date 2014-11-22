@@ -17,7 +17,7 @@ html * {
 body {
   font-size: 100%;
   font-family: "Ubuntu", sans-serif;
-  color: #333333;
+  color: #333;
   background-color: #ebe9d7;
 }
 
@@ -206,6 +206,12 @@ xgallery
   /* this is the item that rotates */
   position: relative;
 }
+.touch .cd-gallery .cd-item-wrapper {
+  /* fix a bug on IOS8 - rotating elements dissapear*/
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
+}
 .cd-gallery .cd-item-wrapper.is-switched .is-visible {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
@@ -271,7 +277,7 @@ xgallery
     margin-right: 4%;
     margin-bottom: 1.2em;
   }
-  .cd-gallery > li:nth-child(2n) {
+  .cd-gallery > li:nth-of-type(2n) {
     margin-right: 0;
   }
 }
@@ -280,10 +286,10 @@ xgallery
     width: 22%;
     float: left;
   }
-  .cd-gallery > li:nth-child(2n) {
+  .cd-gallery > li:nth-of-type(2n) {
     margin-right: 4%;
   }
-  .cd-gallery > li:nth-child(4n) {
+  .cd-gallery > li:nth-of-type(4n) {
     margin-right: 0;
   }
 }
@@ -302,12 +308,10 @@ xkeyframes
   0% {
     -webkit-transform: perspective(800px) rotateY(0);
   }
-
   70% {
     -webkit-transform: perspective(800px) rotateY(200deg);
     /* this creates the bounce effect */
   }
-
   100% {
     -webkit-transform: perspective(800px) rotateY(180deg);
   }
@@ -316,12 +320,10 @@ xkeyframes
   0% {
     -moz-transform: perspective(800px) rotateY(0);
   }
-
   70% {
     -moz-transform: perspective(800px) rotateY(200deg);
     /* this creates the bounce effect */
   }
-
   100% {
     -moz-transform: perspective(800px) rotateY(180deg);
   }
@@ -334,7 +336,6 @@ xkeyframes
     -o-transform: perspective(800px) rotateY(0);
     transform: perspective(800px) rotateY(0);
   }
-
   70% {
     -webkit-transform: perspective(800px) rotateY(200deg);
     -moz-transform: perspective(800px) rotateY(200deg);
@@ -343,7 +344,6 @@ xkeyframes
     transform: perspective(800px) rotateY(200deg);
     /* this creates the bounce effect */
   }
-
   100% {
     -webkit-transform: perspective(800px) rotateY(180deg);
     -moz-transform: perspective(800px) rotateY(180deg);
@@ -356,12 +356,10 @@ xkeyframes
   0% {
     -webkit-transform: perspective(800px) rotateY(-180deg);
   }
-
   70% {
     -webkit-transform: perspective(800px) rotateY(20deg);
     /* this creates the bounce effect */
   }
-
   100% {
     -webkit-transform: perspective(800px) rotateY(0);
   }
@@ -370,12 +368,10 @@ xkeyframes
   0% {
     -moz-transform: perspective(800px) rotateY(-180deg);
   }
-
   70% {
     -moz-transform: perspective(800px) rotateY(20deg);
     /* this creates the bounce effect */
   }
-
   100% {
     -moz-transform: perspective(800px) rotateY(0);
   }
@@ -388,7 +384,6 @@ xkeyframes
     -o-transform: perspective(800px) rotateY(-180deg);
     transform: perspective(800px) rotateY(-180deg);
   }
-
   70% {
     -webkit-transform: perspective(800px) rotateY(20deg);
     -moz-transform: perspective(800px) rotateY(20deg);
@@ -397,7 +392,6 @@ xkeyframes
     transform: perspective(800px) rotateY(20deg);
     /* this creates the bounce effect */
   }
-
   100% {
     -webkit-transform: perspective(800px) rotateY(0);
     -moz-transform: perspective(800px) rotateY(0);

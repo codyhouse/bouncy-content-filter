@@ -226,6 +226,11 @@ xgallery
 	.cd-item-wrapper { /* this is the item that rotates */
 		position: relative;
 
+		.touch & {
+			/* fix a bug on IOS8 - rotating elements disappear*/
+			@include perspective($cd-perspective);
+		}
+
 		&.is-switched {
 
 			.is-visible {
@@ -282,7 +287,7 @@ xgallery
 			margin-right: 4%;
 			margin-bottom: 1.2em;
 
-			&:nth-child(2n) {
+			&:nth-of-type(2n) {
 				margin-right: 0;
 			}
 		}
@@ -292,11 +297,11 @@ xgallery
 		> li {
 			@include column(.22);
 
-			&:nth-child(2n) {
+			&:nth-of-type(2n) {
 				margin-right: 4%;
 			}
 
-			&:nth-child(4n) {
+			&:nth-of-type(4n) {
 				margin-right: 0;
 			}
 		}
